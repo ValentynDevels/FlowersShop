@@ -34,6 +34,7 @@ if (class_exists('WooCommerce')) {
    * settings for archove products page
    */
   require get_template_directory() . '/woocommerce/includes/wc-archive-functions-remove.php';
+  require get_template_directory() . '/woocommerce/includes/wc-archive-functions.php';
 }
 
 //include carbon fields plugin
@@ -48,6 +49,6 @@ function crb_load() {
 add_action('carbon_fields_register_fields', 'fs_reg_custom_fields');
 
 function fs_reg_custom_fields() {
-  require get_template_directory() . '/inc/carbon-fields/custom-fields-options/metabox.php';
+  //require get_template_directory() . '/inc/carbon-fields/custom-fields-options/metabox.php';
   require get_template_directory() . '/inc/carbon-fields/custom-fields-options/theme-options.php';
 }

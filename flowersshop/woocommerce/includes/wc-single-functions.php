@@ -32,6 +32,14 @@ function fs_add_custom_breadcrumbs() { ?>
   <?php
 }
 
+add_filter( 'woocommerce_get_image_size_single', function( $size ) {
+	return array(
+		'width'  => 150,
+		'height' => 140,
+		'crop'   => 0,
+	);
+} );
+
 /*
  *  output product-page content
  */

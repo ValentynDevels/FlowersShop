@@ -5,11 +5,11 @@
 
 ?>
 
-	<div class="footer">
+	<div class="footer" style="background:url(<?php echo carbon_get_theme_option('fs_footer_bg'); ?>) no-repeat bottom;">
 		<div class="left_footer">
-			<img src="<?php echo get_template_directory_uri() . '/assets/img/footer_logo.gif'; ?>" alt="" /><br />
+			<img src="<?php echo carbon_get_theme_option('fs_footer_logo'); ?>" alt="" /><br />
 			<a href="http://csscreme.com">
-				<img src="<?php echo get_template_directory_uri() . '/assets/img/csscreme.gif'; ?>" alt="" border="0" />
+				<img src="<?php echo carbon_get_theme_option('fs_footer_add_logo'); ?>" alt="" border="0" />
 			</a>
 		</div>
 

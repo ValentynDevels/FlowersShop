@@ -38,6 +38,7 @@ if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 
 
 <?php
+
 if ( woocommerce_product_loop() ) {
 
 	/**

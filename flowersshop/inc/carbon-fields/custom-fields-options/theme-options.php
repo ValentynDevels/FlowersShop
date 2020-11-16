@@ -13,14 +13,13 @@ use Carbon_Fields\Field;
 Container::make( 'theme_options', __( 'Theme settings' ) )
     ->set_icon('dashicons-carrot')
     ->add_tab( __( 'Header & Footer' ), array( //method add_tab add tabs for fields
-        Field::make( 'image', 'fs_header_logo', __( 'Header Logo' ) ),
+        Field::make( 'image', 'fs_header_logo', __( 'Header Logo' ) )->set_value_type( 'url' )->set_width(25),
+        Field::make( 'image', 'fs_footer_logo', __( 'Footer Logo' ) )->set_value_type( 'url' )->set_width(25),
+        Field::make( 'image', 'fs_footer_add_logo', __( 'Footer additional Logo' ) )->set_value_type( 'url' )->set_width(25),
+        Field::make( 'image', 'fs_footer_bg', __( 'Footer Background' ) )->set_value_type( 'url' )->set_width(25),
     ) )
-    ->add_tab( __( 'About us' ), array(
-        Field::make( 'textarea', 'fs_about_page_text', __( 'Text on "About us" page' ) )->set_width(50),
-    ) )
-    ->add_tab( __( 'Reg and Log' ), array(
-        Field::make( 'text', 'crb_first_name', __( 'First Name' ) ),
-        Field::make( 'text', 'crb_last_name', __( 'Last Name' ) ),
-        Field::make( 'text', 'crb_position', __( 'Position' ) ),
+    ->add_tab( __( 'Our shop widget' ), array(
+        Field::make( 'text', 'fs_widget_text', __( 'Text' ) ),
+        Field::make( 'image', 'fs_widget_img', __( 'Image' ) )->set_value_type( 'url'),
     ) );
 

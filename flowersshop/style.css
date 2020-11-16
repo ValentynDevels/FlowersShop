@@ -48,6 +48,7 @@ background-color:#FFFFFF;
 .header{
 width:900px;
 height:181px;
+background: url('assets/img/header.jpg');
 }
 .logo{
 padding:0 0 0 30px;
@@ -198,7 +199,9 @@ width:295px;
 float:left;
 padding:0 0 0 15px;
 position:relative;
+overflow: hidden;
 }
+
 .box_top{
 width:295px;
 height:9px;
@@ -546,7 +549,6 @@ color: #ccc;
 .footer{
 height:100px;
 border-top:1px #b2b2b2 dashed;
-background:url(assets/img/footer_bg.gif) no-repeat bottom;
 }
 .left_footer{
 float:left;
@@ -576,11 +578,6 @@ color:#afaeaf;
 .woocommerce-product-details__short-description {
   padding:5px 15px 5px 15px;
   font-size:11px;
-}
-
-.wp-post-image {
-  width: 150px;
-  height: 140px;
 }
 
 img.zoomImg {
@@ -814,8 +811,6 @@ textarea#comment {
 
 #tab-related_tub .size-woocommerce_thumbnail,
 .products .size-woocommerce_thumbnail {
-  width: 132px;
-  height: 120px;
   border: 1px solid lightgray;
   border-radius: 5px;
 }
@@ -832,6 +827,13 @@ textarea#comment {
   font-weight: 300;
   text-align: center;
   margin-bottom: 4px;
+}
+.new_products a.woocommerce-loop-product__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 150px;
 }
 .new_products a.woocommerce-loop-product__link,
 div.wc-tab ul li a.woocommerce-loop-product__link:hover {
@@ -867,20 +869,83 @@ div.wc-tab ul li a.woocommerce-loop-product__link:hover {
   text-decoration: none;
 }
 
-.woocommerce-pagination ul li .page-numbers {
+.prod_thumb_wrap {
+  position: relative;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 132px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span.product_sale,
+span.product_new,
+span.product_special {
+  position: absolute;
+  display: inline-block;
+  text-align: center;
+  right: -32px;
+  top: 8px;
+  width: 100px;
+  height: 17px;
+  transform: rotate(45deg);
+}
+
+span.product_sale {
+  background: linear-gradient(154.83deg, #E72C25 16.79%, rgba(250, 82, 29, 0.9) 37.69%, #F5762E 53.84%, #C32A27 100.69%);
+  color: white;
+}
+
+span.product_new {
+  background: linear-gradient(154.83deg, #A9CE4A 16.79%, #CCDE68 37.69%, #D0DD65 53.84%, #B9CF48 100.69%);
+  color: green;
+}
+
+span.product_special {
+  background: linear-gradient(154.83deg, #FAA446 16.79%, #EECA6F 40.11%, #EECA6F 58.84%, #F27D27 100.69%);
+  color: #975728;
+  right: -27px;
+  top: 13px;
+  height: 14px;
+  font-size: 11px;
+  padding-top: 3px;
+}
+
+/* ------ pagination special page  --------*/
+.special_pag ul.page-numbers {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.special_pag ul.page-numbers li a.page-numbers {
+  text-decoration: none;
+}
+
+/* ------ pagination shop page --------*/
+
+.woocommerce-pagination ul li .page-numbers,
+.special_pag ul.page-numbers li .page-numbers {
   margin: 0 1px;
 }
-.woocommerce-pagination ul li a.page-numbers {
+.woocommerce-pagination ul li a.page-numbers,
+.special_pag ul.page-numbers li a.page-numbers {
   padding: 2px 5px 2px 5px;
   border: 1px solid #ddd;
 }
-.woocommerce-pagination ul li a.page-numbers:hover {
+.woocommerce-pagination ul li a.page-numbers:hover,
+.special_pag ul.page-numbers li a.page-numbers:hover {
   border: 1px solid #990000;
   background-color: #990000;
   color: white;
 }
 
-.woocommerce-pagination ul li span.page-numbers.current {
+.woocommerce-pagination ul li span.page-numbers.current,
+.special_pag ul.page-numbers li span.page-numbers.current {
   color: white;
   background-color: #990000;
   border: 1px solid #990000;
@@ -961,4 +1026,16 @@ div.wc-tab ul li a.woocommerce-loop-product__link:hover {
 .right_box ul.list a:hover, 
 .right_box ul.list ul a:hover {
   text-decoration: underline;
+}
+
+/* --- Promotion widget styles --- */
+.right_box .products .product {
+  margin: 0 0 20px;
+}
+
+.right_box .products .product h2 {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 300;
+  margin-bottom: 4px;
 }

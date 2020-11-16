@@ -33,4 +33,7 @@ function flowers_settings() {
 	add_theme_support( 'wc-product-gallery-zoom' );
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
+
+	add_image_size('products', 116, 108, true);
+	add_image_size('products-home', 150, 140, true);
 }

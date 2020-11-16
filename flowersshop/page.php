@@ -6,33 +6,28 @@
  * Please note that this is the WordPress construct of pages
  * and that other 'pages' on your WordPress site may use a
  * different template.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package Flowers_Shop
+
  */
 
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+<div class="center_content">
+	<div class="left_content">
+		<div class="title">
+			<span class="title_icon">
+				<img src="<?php echo get_template_directory_uri() . '/assets/img/bullet1.gif'; ?>" alt="" />
+			</span><?php the_title(); ?>
+		</div>
+		<?php the_content(); ?>
+		<div class="clear"></div>
+	</div>
+	<!--end of left content-->
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+<?php get_sidebar(); ?>
+<!--end of right content-->
 
-			get_template_part( 'template-parts/content', 'page' );
-
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-
-		endwhile; // End of the loop.
-		?>
-
-	</main><!-- #main -->
-
-<?php
-//get_sidebar();
-get_footer();
+<div class="clear"></div>
+  </div>
+  <!--end of center content-->
+<?php get_footer(); 

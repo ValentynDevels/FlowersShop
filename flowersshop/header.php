@@ -20,10 +20,7 @@
   <div class="header">
     <div class="logo">
 			<a href="<?php echo get_home_url(); ?>">
-				<?php $logo_id = carbon_get_theme_option('fs_header_logo');
-					$logo = $logo_id ? wp_get_attachment_image($logo_id, 'full') : '';
-				?>
-				<img src="<?php echo $logo[0]; ?>" width="<?php echo $logo[1]; ?>" height="<?php echo $logo[2]; ?>">
+				<img src="<?php echo carbon_get_theme_option('fs_header_logo'); ?>" />
 			</a>
 		</div>
 

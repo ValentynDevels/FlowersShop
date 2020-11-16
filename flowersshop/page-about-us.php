@@ -5,9 +5,7 @@
     <div class="left_content">
       <div class="title"><span class="title_icon"><img src="<?php echo get_template_directory_uri() . '/assets/img/bullet1.gif'; ?>" alt="" /></span>About us</div>
       <div class="feat_prod_box_details">
-        <p class="details"> <img src="images/about.gif" alt="" class="right" />  
-        <?php echo  str_replace(array("\r\n", "\r", "\n"), '</p><p>', carbon_get_theme_option('fs_about_page_text')); ?>
-        </p>
+       <?php the_content(); ?>
       </div>
       <div class="clear"></div>
     </div>
